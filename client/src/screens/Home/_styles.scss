@@ -1,0 +1,27 @@
+.Home {
+  height: 100vh;
+  .Home__Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+  }
+  .Home__Planets {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    .Star {
+      &:first-child {
+        border: 10px solid red;
+      }
+      &:nth-child(2) {
+        border: 10px solid yellow;
+      }
+      &:last-child {
+        bottom: 50px;
+        left: 430px;
+        position: fixed;
+      }
+    }
+  }
+}

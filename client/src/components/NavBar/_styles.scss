@@ -1,0 +1,9 @@
+.NavBar {
+  padding: 30px;
+  .Star {
+    filter: blur(12px);
+    background: $WhiteGold;
+    height: 70px;
+    width: 70px;
+  }
+}

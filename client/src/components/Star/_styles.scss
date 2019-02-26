@@ -1,3 +1,10 @@
 .Star {
+  cursor: pointer;
+  filter: blur(10px);
+  overflow: hidden;
   border-radius: 50%;
+  background: $BlueOcean;
+  border: 5px solid $White;
+  height: $Star__height;
+  width: $Star__width;
 }

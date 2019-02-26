@@ -1,0 +1,16 @@
+.Archives {
+  padding: 20px;
+  h1 {
+    color: $WhiteGold;
+    text-align: center;
+  }
+  ul {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(auto-fit, 400px);
+    gap: 40px 0;
+    li {
+      width: 100%;
+    }
+  }
+}

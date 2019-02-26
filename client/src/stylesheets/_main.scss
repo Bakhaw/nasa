@@ -1,6 +1,21 @@
 body {
-  overflow: hidden;
   margin: 0;
   padding: 0;
   background: $BlueDark;
+  iframe {
+    border: none;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-type: none;
+    }
+  }
+  div[role='tooltip'] {
+    * {
+      font-size: 20px;
+      padding: 10px;
+    }
+  }
 }

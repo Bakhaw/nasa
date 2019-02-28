@@ -1,9 +1,12 @@
 .NavBar {
-  padding: 30px;
+  margin-bottom: 30px;
   .Star {
+    position: absolute;
+    top: 20px;
+    left: 30px;
     filter: blur(12px);
     background: $WhiteGold;
-    height: 70px;
-    width: 70px;
+    height: 55px;
+    width: 55px;
   }
 }

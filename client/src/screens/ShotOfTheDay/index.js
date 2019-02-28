@@ -9,6 +9,7 @@ import ShotImage from '../../components/ShotImage';
 import ShotVideo from '../../components/ShotVideo';
 import Explanation from './Explanation';
 import Title from './Title';
+import NavigateButton from './NavigateButton';
 
 class ShotOfTheDay extends Component {
   state = {
@@ -73,15 +74,17 @@ class ShotOfTheDay extends Component {
     const { explanation, hdurl, media_type, title, url } = shot;
     return (
       <div className='ShotOfTheDay'>
-        <button onClick={this.getPrevShot}>Prev shot</button>
-        <button onClick={this.getNextShot}>Next shot</button>
         <Title title={title} />
-        {media_type === 'image' && (
-          <ShotImage hdurl={hdurl} height='auto' width={600} />
-        )}
-        {media_type === 'video' && (
-          <ShotVideo height={500} url={url} width={600} />
-        )}
+        <div className='ShotOfTheDay__media'>
+          <NavigateButton icon='left-arrow' onClick={this.getPrevShot} />
+          {media_type === 'image' && (
+            <ShotImage hdurl={hdurl} height='auto' width={600} />
+          )}
+          {media_type === 'video' && (
+            <ShotVideo height={500} url={url} width={600} />
+          )}
+          <NavigateButton icon='right-arrow' onClick={this.getNextShot} />
+        </div>
         <Explanation explanation={explanation} />
       </div>
     );

@@ -4,7 +4,27 @@
   justify-content: center;
   align-items: center;
   color: #fff;
-  p {
+  h1 {
+    color: $WhiteGold;
+  }
+  .ShotOfTheDay__media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .NavigateButton {
+      cursor: pointer;
+      background: none;
+      border: none;
+      margin: 0 25px;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  .ShotOfTheDay__explanation {
+    font-size: $FontSize__4;
+    font-weight: lighter;
+    line-height: 30px;
     max-width: 600px;
   }
 }

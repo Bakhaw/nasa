@@ -6,8 +6,8 @@ export default function Video({ height, url, width }) {
       allowFullScreen
       frameBorder={0}
       src={url}
-      height={height}
-      width={width}
+      height={500}
+      width={600}
     />
   );
 }

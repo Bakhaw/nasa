@@ -77,12 +77,8 @@ class ShotOfTheDay extends Component {
         <Title title={title} />
         <div className='ShotOfTheDay__media'>
           <NavigateButton icon='left-arrow' onClick={this.getPrevShot} />
-          {media_type === 'image' && (
-            <ShotImage hdurl={hdurl} height='auto' width={600} />
-          )}
-          {media_type === 'video' && (
-            <ShotVideo height={500} url={url} width={600} />
-          )}
+          {media_type === 'image' && <ShotImage hdurl={hdurl} />}
+          {media_type === 'video' && <ShotVideo url={url} />}
           <NavigateButton icon='right-arrow' onClick={this.getNextShot} />
         </div>
         <Explanation explanation={explanation} />

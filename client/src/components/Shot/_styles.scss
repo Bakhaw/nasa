@@ -1,4 +1,14 @@
-.Shot {
+.Shot__Media {
   height: 500px;
   width: 600px;
+}
+
+.Shot__Title {
+  color: $White;
+  border-left: 8px solid $WhiteGold;
+  padding-left: 10px;
+  width: 600px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

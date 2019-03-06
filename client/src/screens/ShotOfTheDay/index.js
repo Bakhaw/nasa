@@ -8,7 +8,6 @@ import Loader from '../../components/Loader';
 import NavigateButton from '../../components/NavigateButton';
 import Shot from '../../components/Shot';
 import Explanation from './Explanation';
-import Title from './Title';
 
 class ShotOfTheDay extends Component {
   state = {
@@ -62,10 +61,9 @@ class ShotOfTheDay extends Component {
 
     if (isLoading) return <Loader />;
 
-    const { explanation, title } = shot;
+    const { explanation } = shot;
     return (
       <div className='ShotOfTheDay'>
-        <Title title={title} />
         <div className='ShotOfTheDay__media'>
           <NavigateButton icon='left-arrow' onClick={this.getPrevShot} />
           <Shot {...shot} />

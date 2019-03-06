@@ -13,7 +13,7 @@ class Archives extends Component {
     isLoading: false,
     actualDate: moment().format('YYYY-MM-DD'),
     currentPage: 0,
-    numberToFetch: 3,
+    numberToFetch: 15,
     shots: []
   };
 
@@ -104,15 +104,16 @@ class Archives extends Component {
         <ul className='Archives__Shots'>
           {shots.map((shot, index) => (
             <li key={index}>
-              {/* <p className='Archives__Shots__date'>{shot.date}</p> */}
               <Shot {...shot} />
             </li>
           ))}
         </ul>
         <div className='Archives__navigate-buttons'>
-          {currentPage > 0 && (
-            <NavigateButton icon='left-arrow' onClick={this.prevPage} />
-          )}
+          <NavigateButton
+            disabled={currentPage === 0}
+            icon='left-arrow'
+            onClick={this.prevPage}
+          />
           <NavigateButton icon='right-arrow' onClick={this.nextPage} />
         </div>
       </div>

@@ -12,12 +12,15 @@
     p {
       margin: 0;
     }
-    .Shot__Title {
+    .Shot {
       width: 400px;
-    }
-    .Shot__Media {
-      width: 100%;
-      height: 400px;
+      .Shot__Title {
+        width: 400px;
+      }
+      .Shot__Media {
+        width: 100%;
+        height: 400px;
+      }
     }
     .Archives__Shots__date {
       color: rgb(182, 173, 173);

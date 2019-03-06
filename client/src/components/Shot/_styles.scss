@@ -1,14 +1,35 @@
-.Shot__Media {
-  height: 500px;
+.Shot {
   width: 600px;
-}
-
-.Shot__Title {
-  color: $White;
-  border-left: 8px solid $WhiteGold;
-  padding-left: 10px;
-  width: 600px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  .Shot__Media {
+    height: 500px;
+    width: 600px;
+  }
+  .Shot__Title {
+    color: $White;
+    border-left: 8px solid $WhiteGold;
+    padding-left: 10px;
+    width: 600px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &:hover:after {
+      // Tooltip when hovering stream title
+      content: attr(data-text);
+      display: block;
+      color: $BlueDark;
+      font-size: 18px;
+      transform: translateY(-70px);
+      position: absolute;
+      border: 1px solid gray;
+      padding: 3px 7px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.28);
+      background: $White;
+      overflow: visible;
+      text-overflow: inherit;
+      width: auto;
+      max-width: 600px;
+      white-space: normal;
+      word-wrap: break-word;
+    }
+  }
 }

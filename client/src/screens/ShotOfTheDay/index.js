@@ -10,11 +10,13 @@ import Shot from '../../components/Shot';
 import Explanation from './Explanation';
 
 class ShotOfTheDay extends Component {
-  state = {
+  initialState = {
     isLoading: false,
     date: moment().format('YYYY-MM-DD'),
     shot: {}
   };
+
+  state = this.initialState;
 
   componentDidMount() {
     this.getShot();
@@ -57,7 +59,7 @@ class ShotOfTheDay extends Component {
   };
 
   render() {
-    const { isLoading, shot } = this.state;
+    const { date, isLoading, shot } = this.state;
 
     if (isLoading) return <Loader />;
 
@@ -67,7 +69,11 @@ class ShotOfTheDay extends Component {
         <div className='ShotOfTheDay__media'>
           <NavigateButton icon='left-arrow' onClick={this.getPrevShot} />
           <Shot {...shot} />
-          <NavigateButton icon='right-arrow' onClick={this.getNextShot} />
+          <NavigateButton
+            disabled={date === this.initialState.date}
+            icon='right-arrow'
+            onClick={this.getNextShot}
+          />
         </div>
         <Explanation explanation={explanation} />
       </div>

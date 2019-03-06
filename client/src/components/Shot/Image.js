@@ -3,7 +3,7 @@ import Title from './Title';
 
 export default function Image({ hdurl, title }) {
   return (
-    <div>
+    <div className='Shot'>
       <Title title={title} />
       <a href={hdurl} target='_blank'>
         <img

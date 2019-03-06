@@ -3,7 +3,7 @@ import Title from './Title';
 
 export default function Video({ title, url }) {
   return (
-    <div>
+    <div className='Shot'>
       <Title title={title} />
       <iframe
         allowFullScreen

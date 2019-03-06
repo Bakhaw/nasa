@@ -7,3 +7,9 @@
     opacity: 0.7;
   }
 }
+
+.NavigateButton__disabled {
+  filter: opacity(25%);
+  cursor: not-allowed;
+  pointer-events: none;
+}

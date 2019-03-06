@@ -13,15 +13,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .NavigateButton {
-      cursor: pointer;
-      background: none;
-      border: none;
-      margin: 0 25px;
-      &:hover {
-        opacity: 0.7;
-      }
-    }
   }
   .ShotOfTheDay__explanation {
     font-size: $FontSize__4;

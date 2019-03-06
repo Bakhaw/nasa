@@ -5,18 +5,15 @@ import moment from 'moment';
 import key from '../../key';
 
 import Loader from '../../components/Loader';
-import ShotImage from '../../components/ShotImage';
-import ShotVideo from '../../components/ShotVideo';
+import NavigateButton from '../../components/NavigateButton';
+import Shot from '../../components/Shot';
 import Explanation from './Explanation';
 import Title from './Title';
-import NavigateButton from './NavigateButton';
 
 class ShotOfTheDay extends Component {
   state = {
     isLoading: false,
-    date: moment()
-      .subtract(1, 'day')
-      .format('YYYY-MM-DD'),
+    date: moment().format('YYYY-MM-DD'),
     shot: {}
   };
 
@@ -34,9 +31,9 @@ class ShotOfTheDay extends Component {
 
   getShot = async () => {
     await this.toggleLoading(true);
-    const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${
-      key.API_KEY
-    }&date=${this.state.date}`;
+    const apiUrl = `${key.API_URL}?api_key=${key.API_KEY}&date=${
+      this.state.date
+    }`;
     const request = await axios.get(apiUrl);
     const shot = request.data;
     await this.setState({ shot });
@@ -52,13 +49,7 @@ class ShotOfTheDay extends Component {
 
   getNextShot = () => {
     const { date } = this.state;
-    if (
-      date ===
-      moment()
-        .subtract(1, 'day')
-        .format('YYYY-MM-DD')
-    )
-      return;
+    if (date === moment().format('YYYY-MM-DD')) return;
 
     const newDate = moment(date)
       .add(1, 'day')
@@ -71,14 +62,13 @@ class ShotOfTheDay extends Component {
 
     if (isLoading) return <Loader />;
 
-    const { explanation, hdurl, media_type, title, url } = shot;
+    const { explanation, title } = shot;
     return (
       <div className='ShotOfTheDay'>
         <Title title={title} />
         <div className='ShotOfTheDay__media'>
           <NavigateButton icon='left-arrow' onClick={this.getPrevShot} />
-          {media_type === 'image' && <ShotImage hdurl={hdurl} />}
-          {media_type === 'video' && <ShotVideo url={url} />}
+          <Shot {...shot} />
           <NavigateButton icon='right-arrow' onClick={this.getNextShot} />
         </div>
         <Explanation explanation={explanation} />

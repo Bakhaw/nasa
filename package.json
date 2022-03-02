@@ -1,17 +1,45 @@
 {
-  "name": "nasa-app",
+  "name": "client",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=production nodemon -r esm server.js",
-    "dev": "nodemon -r esm server.js"
+    "build": "rm -rf dist/ && webpack -p --progress --mode production",
+    "dev": "webpack-dev-server --mode development"
   },
   "dependencies": {
-    "compression": "^1.7.3",
-    "dotenv": "^6.2.0",
-    "esm": "^3.1.4",
-    "express": "^4.16.4",
-    "nodemon": "^1.18.9"
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@babel/runtime": "^7.3.1",
+    "@material-ui/core": "^3.9.2",
+    "axios": "^0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "classnames": "^2.2.6",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^2.1.0",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "i18next": "^14.0.1",
+    "i18next-browser-languagedetector": "^2.2.4",
+    "image-webpack-loader": "^4.6.0",
+    "moment": "^2.24.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-i18next": "^9.0.10",
+    "react-router-dom": "^4.3.1",
+    "sass": "^1.49.9",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   }
 }

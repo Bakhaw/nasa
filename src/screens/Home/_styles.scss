@@ -1,0 +1,7 @@
+.Home {
+  height: calc(
+    100vh - 110px
+  ); // 80px: padding top and bottom + 30px: navbar margin bottom
+  overflow: hidden;
+  padding: 40px 0;
+}
